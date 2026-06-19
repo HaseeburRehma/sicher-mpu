@@ -12,23 +12,23 @@ export const metadata: Metadata = {
 const deliverables = [
   {
     n: "I",
-    h: "Themen‑Coaching",
-    p: "Vertiefte Übung zu deinen MPU‑relevanten Themen – Alkohol, Drogen, Punkte oder Aggression.",
+    h: "Themen-Coaching",
+    p: "Vertiefte Übung zu deinen MPU-relevanten Themen – Alkohol, Drogen, Punkte oder Aggression.",
   },
   {
     n: "II",
     h: "Prüfungssimulation",
-    p: "Realistische Frage‑Antwort‑Übungen unter Prüfungsbedingungen – mit ehrlichem Feedback.",
+    p: "Realistische Frage-Antwort-Übungen unter Prüfungsbedingungen – mit ehrlichem Feedback.",
   },
   {
     n: "III",
-    h: "Antwort‑Schärfung",
+    h: "Antwort-Schärfung",
     p: "Wir hören dir zu wie du deine Geschichte erzählst – und sagen dir wo es noch hakt.",
   },
   {
     n: "IV",
-    h: "Schwachstellen‑Analyse",
-    p: "Identifikation der Bereiche in denen du noch unsicher wirkst – plus konkrete Übungs‑Empfehlungen.",
+    h: "Schwachstellen-Analyse",
+    p: "Identifikation der Bereiche in denen du noch unsicher wirkst – plus konkrete Übungs-Empfehlungen.",
   },
   {
     n: "V",
@@ -120,7 +120,7 @@ export default function NachhilfePage() {
                 zusätzlich Anwälte, Aktenanalyse und Ärzte an deiner Seite haben
                 willst – und nur bei Erfolg voll zahlen möchtest – ist die{" "}
                 <Link href="/beratung" className="inline">
-                  MPU Beratung 1‑zu‑1
+                  MPU Beratung 1-zu-1
                 </Link>{" "}
                 der bessere Weg.
               </p>
@@ -129,7 +129,7 @@ export default function NachhilfePage() {
                 dir passt.
               </p>
               <Link href="/beratung" className="link-arrow">
-                Zur MPU Beratung 1‑zu‑1 <span className="arrow">→</span>
+                Zur MPU Beratung 1-zu-1 <span className="arrow">→</span>
               </Link>
             </div>
           </div>

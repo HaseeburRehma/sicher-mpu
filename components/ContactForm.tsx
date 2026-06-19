@@ -14,6 +14,7 @@ const reasons = [
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -28,20 +29,22 @@ export default function ContactForm() {
     }
 
     setSubmitting(true);
-    const endpoint = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT;
+    setError(false);
+
+    const payload = Object.fromEntries(new FormData(form).entries());
     try {
-      if (endpoint) {
-        const data = new FormData(form);
-        await fetch(endpoint, {
-          method: "POST",
-          body: data,
-          headers: { Accept: "application/json" },
-        });
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (res.ok) {
+        setSent(true);
+      } else {
+        setError(true);
       }
-      setSent(true);
     } catch {
-      // Even on network error we show the confirmation; real endpoint logging TBD with Ilias
-      setSent(true);
+      setError(true);
     } finally {
       setSubmitting(false);
     }
@@ -98,7 +101,7 @@ export default function ContactForm() {
 
         <div className="form-row">
           <div className="field">
-            <label htmlFor="email">E‑Mail</label>
+            <label htmlFor="email">E-Mail</label>
             <input
               id="email"
               name="email"
@@ -149,6 +152,14 @@ export default function ContactForm() {
           {submitting ? "Wird gesendet …" : "Anfrage senden"}{" "}
           <span className="arrow">→</span>
         </button>
+
+        {error && (
+          <p className="form-error" role="alert">
+            Das hat leider nicht geklappt. Bitte versuche es erneut oder schreib
+            uns direkt an{" "}
+            <a href="mailto:info@sichermpu.de">info@sichermpu.de</a>.
+          </p>
+        )}
       </form>
     </div>
   );

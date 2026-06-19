@@ -40,6 +40,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
 }
 
 body {
@@ -52,7 +53,34 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* Don't hyphenate the large display headlines — let them break on
+   whole words / the manual line breaks in the markup. */
+.h1,
+.h2 {
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+/* Grid/flex items must be allowed to shrink below their content's
+   min-content width, otherwise long German compound words push them
+   wider than their track and cause horizontal overflow on mobile. */
+.services-grid > *,
+.paths-grid > *,
+.compare-grid > *,
+.deliver-grid > *,
+.risk-grid > *,
+.risk-split > *,
+.sec-head > *,
+.footer-grid > *,
+.contact-grid > *,
+.founder-grid > * {
+  min-width: 0;
 }
 
 img {
@@ -848,10 +876,25 @@ p {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 500;
-  font-size: 44px;
+  font-size: 36px;
   line-height: 1;
   color: var(--paper);
   margin-top: 18px;
+  white-space: nowrap;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+/* Below 1280px the two narrow split columns can't hold "Bestanden" on
+   one line, so stack them into a single full-width column. */
+@media (max-width: 1280px) {
+  .risk-split {
+    grid-template-columns: 1fr;
+  }
+  .risk-col + .risk-col {
+    border-left: 0;
+    border-top: 1px solid rgba(198, 191, 174, 0.2);
+  }
 }
 .risk-col .pm-note {
   margin-top: 18px;
@@ -877,6 +920,11 @@ p {
   justify-content: center;
   position: relative;
   overflow: hidden;
+}
+.founder-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .founder-photo .initials {
   font-family: var(--font-display);
@@ -1313,6 +1361,16 @@ p {
   color: var(--paper);
 }
 
+.form-error {
+  margin-top: 18px;
+  font-size: 14px;
+  color: var(--rust);
+}
+.form-error a {
+  color: var(--rust);
+  text-decoration: underline;
+}
+
 .form-success {
   background: var(--ink);
   color: var(--paper);
@@ -1381,13 +1439,15 @@ p {
   .mobile-menu {
     display: block;
     position: fixed;
-    inset: 86px 0 0 0;
+    inset: 0;
     background: var(--paper);
     z-index: 99;
-    padding: 32px 24px;
+    padding: 110px 24px 40px;
     transform: translateX(100%);
     transition: transform 0.3s ease;
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
   .mobile-menu.open {
     transform: translateX(0);
@@ -1461,6 +1521,13 @@ p {
   .risk-grid {
     gap: 48px;
   }
+  .risk-split {
+    grid-template-columns: 1fr;
+  }
+  .risk-col + .risk-col {
+    border-left: 0;
+    border-top: 1px solid rgba(198, 191, 174, 0.2);
+  }
   .risk-watermark {
     font-size: 320px;
     opacity: 0.05;
@@ -1502,14 +1569,16 @@ p {
   .form-row {
     gap: 0;
   }
+  .hero-cta,
+  .cta-buttons {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
   .hero-cta .btn,
   .cta-buttons .btn {
     width: 100%;
     justify-content: center;
-  }
-  .hero-cta,
-  .cta-buttons {
-    width: 100%;
   }
   .stat-big {
     font-size: 72px;

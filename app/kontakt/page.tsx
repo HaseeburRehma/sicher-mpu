@@ -24,7 +24,7 @@ export default function KontaktPage() {
           <div>
             <span className="eyebrow">Erstgespräch · Kostenfrei</span>
             <h1 className="h1">
-              Lass uns reden. <span className="accent">Ohne Vorab‑Kosten.</span>
+              Lass uns reden. <span className="accent">Ohne Vorab-Kosten.</span>
             </h1>
             <p className="lead">
               Erzähl uns kurz wo du stehst. Im kostenfreien Erstgespräch klären
@@ -50,7 +50,7 @@ export default function KontaktPage() {
                 <div className="ir-note">Erreichbar Mo–Fr · 9 – 18 Uhr</div>
               </div>
               <div className="info-row">
-                <div className="ir-label">E‑Mail</div>
+                <div className="ir-label">E-Mail</div>
                 <div className="ir-value">
                   <a href={`mailto:${site.email}`}>{site.email}</a>
                 </div>
@@ -67,7 +67,7 @@ export default function KontaktPage() {
               </div>
             </div>
             <div className="info-flag">
-              Ausschließlich vor Ort. Keine Online‑Beratung.
+              Ausschließlich vor Ort. Keine Online-Beratung.
             </div>
           </aside>
         </div>

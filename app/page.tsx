@@ -1,11 +1,18 @@
+import fs from "fs";
+import path from "path";
+import Image from "next/image";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { site } from "@/lib/site";
 
+// Show the real founder portrait once it's added to public/images,
+// otherwise fall back to the monogram placeholder.
+const FOUNDER_PHOTO = "/images/natascha-bauer.jpg";
+
 const services = [
   {
     idx: "01 · Vollbegleitung",
-    title: "MPU Beratung 1‑zu‑1",
+    title: "MPU Beratung 1-zu-1",
     desc: "Persönliche Vollbegleitung durch Anwälte, Ärzte und Psychologen. Aktenanalyse, Vorbereitung, Prüfungssimulation, Restzahlung erst nach Bestehen. Ausschließlich vor Ort in Düsseldorf.",
     href: "/beratung",
   },
@@ -22,7 +29,7 @@ const services = [
   },
   {
     idx: "04 · Ärztlich",
-    title: "Ärztliche Untersuchungs‑Vorbereitung",
+    title: "Ärztliche Untersuchungs-Vorbereitung",
     desc: "Spezielle Vorbereitung für ärztliche Untersuchungen – auch für Cannabispatienten und ähnliche Konstellationen.",
   },
   {
@@ -42,12 +49,12 @@ const services = [
   },
   {
     idx: "08 · Aggression",
-    title: "Anti‑Aggressions‑Training",
-    desc: "Strukturiertes Training für Klienten mit auffälligem Verhalten – wird bei vielen MPU‑Begutachtungen positiv gewichtet.",
+    title: "Anti-Aggressions-Training",
+    desc: "Strukturiertes Training für Klienten mit auffälligem Verhalten – wird bei vielen MPU-Begutachtungen positiv gewichtet.",
   },
 ];
 
-const process = [
+const processSteps = [
   {
     n: "I",
     h: "Erstgespräch",
@@ -61,7 +68,7 @@ const process = [
   {
     n: "III",
     h: "Vorbereitung",
-    p: "Individuelle 1‑zu‑1 Sessions, Prüfungssimulation, persönliche Auswertung – digital und vor Ort.",
+    p: "Individuelle 1-zu-1 Sessions, Prüfungssimulation, persönliche Auswertung – digital und vor Ort.",
   },
   {
     n: "IV",
@@ -107,6 +114,10 @@ const jsonLd = [
 ];
 
 export default function Home() {
+  const hasFounderPhoto = fs.existsSync(
+    path.join(process.cwd(), "public", FOUNDER_PHOTO)
+  );
+
   return (
     <>
       <JsonLd data={jsonLd} />
@@ -121,7 +132,7 @@ export default function Home() {
               Strategie statt Stress.
             </h1>
             <p className="lead">
-              1‑zu‑1 Beratung in Düsseldorf durch ein erfahrenes Team aus
+              1-zu-1 Beratung in Düsseldorf durch ein erfahrenes Team aus
               Anwälten, Psychologen und Ärzten. Persönlich – nie online. Du
               zahlst den Restbetrag erst nach bestandener Prüfung.
             </p>
@@ -141,8 +152,8 @@ export default function Home() {
               99<sup>%</sup>
             </div>
             <p className="stat-note">
-              Über 95 Klienten mit perfekter 5‑Sterne‑Bewertung. Erfahrene
-              Begleitung durch jeden Schritt der medizinisch‑psychologischen
+              Über 95 Klienten mit perfekter 5-Sterne-Bewertung. Erfahrene
+              Begleitung durch jeden Schritt der medizinisch-psychologischen
               Untersuchung.
             </p>
             <div className="stat-metrics">
@@ -195,7 +206,7 @@ export default function Home() {
           </div>
 
           <div className="process-grid">
-            {process.map((s) => (
+            {processSteps.map((s) => (
               <div className="proc-step" key={s.n}>
                 <span className="proc-num">{s.n}</span>
                 <h3 className="h3">{s.h}</h3>
@@ -228,7 +239,7 @@ export default function Home() {
             <Link href="/beratung" className="path-card featured">
               <span className="tag">Weg 01 · Vollbegleitung</span>
               <h3>
-                MPU Beratung <span className="accent">1‑zu‑1.</span>
+                MPU Beratung <span className="accent">1-zu-1.</span>
               </h3>
               <p className="sub">
                 Komplettpaket mit Anwälten, Ärzten und Psychologen. Wir
@@ -245,7 +256,7 @@ export default function Home() {
               <div className="path-meta">
                 <div>
                   <div className="pm-label">Format</div>
-                  <div className="pm-value">1‑zu‑1</div>
+                  <div className="pm-value">1-zu-1</div>
                 </div>
                 <div>
                   <div className="pm-label">Ort</div>
@@ -268,7 +279,7 @@ export default function Home() {
                 stundenweise.
               </p>
               <ul className="path-list">
-                <li><span className="b">·</span> Inhaltliche Übung zu deinen MPU‑Themen</li>
+                <li><span className="b">·</span> Inhaltliche Übung zu deinen MPU-Themen</li>
                 <li><span className="b">·</span> Prüfungssimulation und Feedback</li>
                 <li><span className="b">·</span> Gezielte Aufarbeitung schwieriger Fragen</li>
                 <li><span className="b">·</span> Stundenweise buchbar, keine Vollbegleitung</li>
@@ -304,7 +315,7 @@ export default function Home() {
             </div>
             <p className="lead">
               Unser Team aus Anwälten, Psychologen und Ärzten begleitet jeden
-              Fall – von der Standard‑MPU bis zur komplexen Begutachtung mit
+              Fall – von der Standard-MPU bis zur komplexen Begutachtung mit
               Abhängigkeitsdiagnose.
             </p>
           </div>
@@ -360,7 +371,7 @@ export default function Home() {
               <h3 className="h3">Individuell. Persönlich. Erfolgsbasiert.</h3>
               <ul className="compare-list">
                 <li><span className="plus">+</span> Maßgeschneidertes Programm auf Basis deiner Führerscheinakte</li>
-                <li><span className="plus">+</span> 1‑zu‑1 Betreuung durch Anwälte, Ärzte und Psychologen</li>
+                <li><span className="plus">+</span> 1-zu-1 Betreuung durch Anwälte, Ärzte und Psychologen</li>
                 <li><span className="plus">+</span> Persönliche Sitzungen in unserem Büro in Düsseldorf</li>
                 <li><span className="plus">+</span> Prüfungssimulation mit individueller Auswertung</li>
                 <li><span className="plus">+</span> Restbetrag wird erst nach bestandener MPU fällig</li>
@@ -369,12 +380,12 @@ export default function Home() {
             </div>
 
             <div className="compare-card bad">
-              <span className="ctag">Standard‑Anbieter</span>
+              <span className="ctag">Standard-Anbieter</span>
               <h3 className="h3">Theorie. Vorlagen. Vorkasse.</h3>
               <ul className="compare-list">
                 <li><span className="dot">·</span> Standardisierte Module für alle Klienten gleich</li>
                 <li><span className="dot">·</span> Reine Theorieschulung, kaum praktische Übung</li>
-                <li><span className="dot">·</span> Häufig Online‑Kurse statt persönlicher Begleitung</li>
+                <li><span className="dot">·</span> Häufig Online-Kurse statt persönlicher Begleitung</li>
                 <li><span className="dot">·</span> Volle Vorkasse vor Beginn der Arbeit</li>
                 <li><span className="dot">·</span> Quantität statt Qualität, wenig individuelle Unterstützung</li>
                 <li><span className="dot">·</span> Veraltete Methoden und oberflächliche Betreuung</li>
@@ -403,7 +414,7 @@ export default function Home() {
               was zählt: deine MPU.
             </p>
             <p className="caption" style={{ marginTop: 24 }}>
-              Erfolgsbasierte Zahlung gilt für die MPU Beratung 1‑zu‑1.
+              Erfolgsbasierte Zahlung gilt für die MPU Beratung 1-zu-1.
             </p>
           </div>
 
@@ -430,8 +441,21 @@ export default function Home() {
       <section className="section">
         <div className="container founder-grid">
           <div className="founder-photo">
-            <span className="initials">NB</span>
-            <span className="ph-caption">Natascha Bauer · Foto</span>
+            {hasFounderPhoto ? (
+              <Image
+                src={FOUNDER_PHOTO}
+                alt="Natascha Bauer – Gründerin von SicherMPU"
+                fill
+                sizes="(max-width: 980px) 100vw, 40vw"
+                style={{ objectFit: "cover" }}
+                priority
+              />
+            ) : (
+              <>
+                <span className="initials">NB</span>
+                <span className="ph-caption">Natascha Bauer · Foto</span>
+              </>
+            )}
           </div>
           <div>
             <span className="eyebrow">Gründerin &amp; Beraterin</span>

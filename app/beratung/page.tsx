@@ -22,7 +22,7 @@ const deliverables = [
   {
     n: "III",
     h: "Prüfungssimulation",
-    p: "Realistische Übungs‑Gespräche unter Prüfungsbedingungen mit anschließender Detail‑Auswertung.",
+    p: "Realistische Übungs-Gespräche unter Prüfungsbedingungen mit anschließender Detail-Auswertung.",
   },
   {
     n: "IV",
@@ -32,7 +32,7 @@ const deliverables = [
   {
     n: "V",
     h: "Anwaltliche Begleitung",
-    p: "Bei Bedarf juristische Unterstützung durch unser Anwalts‑Netzwerk – nahtlos integriert.",
+    p: "Bei Bedarf juristische Unterstützung durch unser Anwalts-Netzwerk – nahtlos integriert.",
   },
   {
     n: "VI",
@@ -44,16 +44,16 @@ const deliverables = [
 export default function BeratungPage() {
   return (
     <ServiceDetail
-      breadcrumb="MPU Beratung 1‑zu‑1"
+      breadcrumb="MPU Beratung 1-zu-1"
       eyebrow="Leistung 01 · Vollbegleitung"
       title={
         <>
-          MPU Beratung <span className="accent">1‑zu‑1.</span>
+          MPU Beratung <span className="accent">1-zu-1.</span>
         </>
       }
-      lead="Persönliche Vollbegleitung durch die medizinisch‑psychologische Untersuchung – ausschließlich vor Ort in unserem Büro in Düsseldorf. Keine Massenkurse, keine Videoschulungen. Du und dein Berater."
+      lead="Persönliche Vollbegleitung durch die medizinisch-psychologische Untersuchung – ausschließlich vor Ort in unserem Büro in Düsseldorf. Keine Massenkurse, keine Videoschulungen. Du und dein Berater."
       meta={[
-        { label: "Format", value: "1‑zu‑1" },
+        { label: "Format", value: "1-zu-1" },
         { label: "Ort", value: "Nur vor Ort" },
         { label: "Dauer", value: "Nach Bedarf" },
         { label: "Zahlung", value: "Erfolgsbasiert" },

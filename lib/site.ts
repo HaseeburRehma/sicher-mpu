@@ -12,7 +12,6 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Start", href: "/" },
   { label: "Beratung", href: "/beratung" },
   { label: "Nachhilfe", href: "/nachhilfe" },
   { label: "Kontakt", href: "/kontakt" },
@@ -27,7 +26,7 @@ export const footerCols = {
     { label: "Impressum", href: "/impressum" },
   ],
   leistungen: [
-    { label: "MPU Beratung 1‑zu‑1", href: "/beratung" },
+    { label: "MPU Beratung 1-zu-1", href: "/beratung" },
     { label: "MPU Nachhilfe", href: "/nachhilfe" },
     { label: "Gruppenseminare", href: "/beratung" },
     { label: "Abstinenznachweise", href: "/beratung" },

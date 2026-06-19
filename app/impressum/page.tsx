@@ -17,7 +17,7 @@ export default function ImpressumPage() {
         <section>
           <h2 className="h2">Angaben gemäß § 5 TMG</h2>
           <p>
-            b&amp;b MPU‑Beratung Drecker UG (haftungsbeschränkt){"\n"}
+            b&amp;b MPU-Beratung Drecker UG (haftungsbeschränkt){"\n"}
             Achillesstr. 10{"\n"}
             40545 Düsseldorf
           </p>
@@ -32,7 +32,7 @@ export default function ImpressumPage() {
           <h2 className="h2">Kontakt</h2>
           <p>
             Telefon: +49 176 21914166{"\n"}
-            E‑Mail: info@sichermpu.de{"\n"}
+            E-Mail: info@sichermpu.de{"\n"}
             Website: www.sichermpu.de
           </p>
         </section>
@@ -49,7 +49,7 @@ export default function ImpressumPage() {
         <section>
           <h2 className="h2">Umsatzsteuer-ID</h2>
           <p>
-            Umsatzsteuer‑Identifikationsnummer gemäß §27a Umsatzsteuergesetz:
+            Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz:
             {"\n"}103/5714/2317
           </p>
         </section>
