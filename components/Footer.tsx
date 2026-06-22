@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Image
-              src="/images/logo-themed-dark.png"
+              src="/images/logo-blue-dark.png"
               alt="SicherMPU"
               width={1375}
               height={300}

@@ -20,7 +20,7 @@ export default function Header() {
         <div className="container header-inner">
         <Link href="/" className="logo" aria-label="SicherMPU Startseite">
           <Image
-            src="/images/logo-themed.png"
+            src="/images/logo-blue.png"
             alt="SicherMPU"
             width={1375}
             height={300}

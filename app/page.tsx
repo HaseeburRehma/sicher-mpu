@@ -128,8 +128,11 @@ export default function Home() {
           <div>
             <span className="eyebrow">MPU Beratung · Düsseldorf · Seit 2015</span>
             <h1 className="h1">
-              Den Führerschein <span className="accent">zurückholen.</span> Mit
-              Strategie statt Stress.
+              Den Führerschein
+              <br />
+              <span className="accent">zurückholen.</span>
+              <br />
+              Mit Strategie statt Stress.
             </h1>
             <p className="lead">
               1-zu-1 Beratung in Düsseldorf durch ein erfahrenes Team aus

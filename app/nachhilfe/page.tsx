@@ -49,7 +49,9 @@ export default function NachhilfePage() {
       eyebrow="Leistung 02 · Selbstvorbereitung"
       title={
         <>
-          MPU <span className="accent">Nachhilfe.</span>
+          MPU
+          <br />
+          <span className="accent">Nachhilfe.</span>
         </>
       }
       lead="Fokussiertes Coaching für alle die sich selbst auf die MPU vorbereiten und gezielt einzelne Themen vertiefen wollen. Schlank, flexibel, stundenweise – vor Ort in Düsseldorf oder online."

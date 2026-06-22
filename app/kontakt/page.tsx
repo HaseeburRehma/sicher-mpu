@@ -20,11 +20,13 @@ export default function KontaktPage() {
           <span>Kontakt</span>
         </nav>
 
-        <header className="detail-header" style={{ paddingBottom: 20 }}>
+        <header className="detail-header contact-header" style={{ paddingBottom: 20 }}>
           <div>
             <span className="eyebrow">Erstgespräch · Kostenfrei</span>
             <h1 className="h1">
-              Lass uns reden. <span className="accent">Ohne Vorab-Kosten.</span>
+              Lass uns reden.
+              <br />
+              <span className="accent">Ohne Vorab-Kosten.</span>
             </h1>
             <p className="lead">
               Erzähl uns kurz wo du stehst. Im kostenfreien Erstgespräch klären

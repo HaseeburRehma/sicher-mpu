@@ -48,7 +48,9 @@ export default function BeratungPage() {
       eyebrow="Leistung 01 · Vollbegleitung"
       title={
         <>
-          MPU Beratung <span className="accent">1-zu-1.</span>
+          MPU Beratung
+          <br />
+          <span className="accent">1-zu-1.</span>
         </>
       }
       lead="Persönliche Vollbegleitung durch die medizinisch-psychologische Untersuchung – ausschließlich vor Ort in unserem Büro in Düsseldorf. Keine Massenkurse, keine Videoschulungen. Du und dein Berater."
