@@ -992,6 +992,30 @@ p {
   text-transform: uppercase;
 }
 
+/* Partner section (Johann Bär) */
+.partner-grid {
+  align-items: stretch;
+}
+.partner-grid .founder-photo {
+  aspect-ratio: auto;
+  height: 100%;
+  min-height: 460px;
+}
+.partner-quote {
+  border-left: 2px solid var(--gold);
+  padding-left: 32px;
+  margin-top: 24px;
+}
+.partner-heading {
+  font-size: clamp(28px, 3.4vw, 42px);
+  line-height: 1.1;
+}
+.partner-logo {
+  height: 64px;
+  width: auto;
+  margin-top: 30px;
+}
+
 /* ============================================================
    CTA STRIP
    ============================================================ */

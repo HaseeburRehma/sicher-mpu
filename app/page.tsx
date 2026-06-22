@@ -73,7 +73,7 @@ const processSteps = [
   {
     n: "IV",
     h: "MPU bestehen",
-    p: "Du gehst sicher in die Untersuchung. Restzahlung erfolgt erst nach erfolgreichem Bestehen.",
+    p: "Du gehst sicher in die Untersuchung.",
   },
 ];
 
@@ -173,24 +173,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRUST STRIP */}
-      <section className="trust">
-        <div className="trust-inner">
-          <span className="trust-item">
-            <span className="dot">·</span>
-            Berufsverband Deutscher Psychologinnen und Psychologen e.V.
-          </span>
-          <span className="trust-item">
-            <span className="dot">·</span>
-            Zertifiziert nach §§ 35 und 64 StGB
-          </span>
-          <span className="trust-item">
-            <span className="dot">·</span>
-            Enge Zusammenarbeit mit Straßenverkehrsbehörden
-          </span>
-        </div>
-      </section>
-
       {/* PROCESS */}
       <section className="section">
         <div className="container">
@@ -216,6 +198,51 @@ export default function Home() {
                 <p>{s.p}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PARTNER — JOHANN BÄR */}
+      <section className="section">
+        <div className="container founder-grid partner-grid">
+          <div className="founder-photo">
+            <Image
+              src="/images/johann-baer.jpg"
+              alt="Johann Bär – Partner und Diplom-Psychologe"
+              fill
+              sizes="(max-width: 980px) 100vw, 40vw"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div>
+            <span className="eyebrow">Partner · Psychologische Begleitung</span>
+            <div className="partner-quote">
+              <h2 className="h2 partner-heading">Tiefe wo es nötig ist.</h2>
+              <p className="lead" style={{ marginTop: 18 }}>
+                Als diplomierter Psychologe, systemischer Coach und
+                Entspannungspädagoge ergänzt Johann Bär unser Team mit
+                psychologischer Tiefe und einer ruhigen, klaren
+                Gesprächsführung. Er begleitet unsere Klienten bei der
+                Aufarbeitung der Ursachen hinter dem Verhalten und unterstützt
+                gezielt bei der Vorbereitung auf die psychologische Komponente
+                der MPU. Durch seine Zweisprachigkeit in Deutsch und Russisch
+                betreut er auch russischsprachige Klienten ohne Sprachbarriere.
+              </p>
+            </div>
+            <div className="founder-name" style={{ marginTop: 30 }}>
+              Johann Bär
+            </div>
+            <div className="founder-title">
+              Dipl. Psychologe · Systemischer Coach · Entspannungspädagoge ·
+              Deutsch &amp; Russisch
+            </div>
+            <Image
+              src="/images/johann-baer-logo.jpg"
+              alt="Johann Bär"
+              width={254}
+              height={180}
+              className="partner-logo"
+            />
           </div>
         </div>
       </section>
@@ -260,10 +287,6 @@ export default function Home() {
                 <div>
                   <div className="pm-label">Format</div>
                   <div className="pm-value">1-zu-1</div>
-                </div>
-                <div>
-                  <div className="pm-label">Ort</div>
-                  <div className="pm-value">Nur vor Ort</div>
                 </div>
               </div>
               <span className="link-arrow">
